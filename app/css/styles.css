@@ -126,6 +126,57 @@ blockquote::before {
   color: #600;
 }
 
+
+
+.showme main {
+  filter: blur(4px) grayscale(100%) opacity(50%);
+}
+
+.popover .closer {
+  position: absolute;
+  top: -11px;
+  right: -14px;
+  color: #600;
+  cursor: pointer;
+
+
+  text-decoration: none;
+  background-color: #fff;
+  padding: 0.25rem;
+  border: 2px solid #600;
+  /* This make it a circle */
+  border-radius: 50%;
+  width: 1rem;
+  
+  /* height = line-height, this is an easy way to center it */
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+}
+
+
+.popover {
+  padding: 1rem;
+  width: 300px;
+  height: 225px;
+  background: #fff;
+  border: 2px solid #600;
+  border-radius: 4px;
+  position: fixed;
+  
+  /* We dynamically try to center the TOP LEFT CORNER of the popover */
+  top: calc(50% - 100px);
+  left: calc(50% - 150px);
+  
+  /* This makes the pop over disapear */
+  /* display: none; */
+}
+
+.showme .popover{
+  display: block;
+}
+
+
 @media (max-width: 800px) {
   .nav {
     position: fixed;
