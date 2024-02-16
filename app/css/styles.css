@@ -126,32 +126,24 @@ blockquote::before {
   color: #600;
 }
 
+/*
+We don't have an ID called 'wrapper' as yet, so we need to use main instead
 
+.showme #wrapper {
+  filter: blur(4px) grayscale(100%) opacity(50%);
+}
 
+*/
 .showme main {
   filter: blur(4px) grayscale(100%) opacity(50%);
 }
 
-.popover .closer {
-  position: absolute;
-  top: -11px;
-  right: -14px;
-  color: #600;
-  cursor: pointer;
+.showme .popover {
+  display: block;
+}
 
-
-  text-decoration: none;
-  background-color: #fff;
-  padding: 0.25rem;
-  border: 2px solid #600;
-  /* This make it a circle */
-  border-radius: 50%;
-  width: 1rem;
-  
-  /* height = line-height, this is an easy way to center it */
-  height: 1rem;
-  line-height: 1rem;
-  text-align: center;
+.showme {
+  display: block;
 }
 
 
@@ -164,17 +156,36 @@ blockquote::before {
   border-radius: 4px;
   position: fixed;
   
-  /* We dynamically try to center the TOP LEFT CORNER of the popover */
+  /*
+    Position of the popover is FIXED.
+    Dynamically try to calculate the TOP LEFT CORNOR of the popover
+      note:  width and height size*/
   top: calc(50% - 100px);
   left: calc(50% - 150px);
   
-  /* This makes the pop over disapear */
-  /* display: none; */
+  /* When not commented out, this hides the popover (iframe) */
+  display: none;
 }
 
-.showme .popover{
-  display: block;
+.popover .closer {
+  position: absolute;
+  top: -11px;
+  right: -14px;
+  color: #600;
+  cursor: pointer;
+
+  /* additional formatting to get the 'x' to appear in the uppper right hand corner of the box */
+  text-decoration: none;
+  background-color: #fff;
+  padding: 0.25rem;
+  border: 2px solid #600;
+  border-radius: 50%; /*Creates a circle as long as the box is square! */
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
 }
+
 
 
 @media (max-width: 800px) {
