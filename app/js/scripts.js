@@ -71,8 +71,15 @@ function handleClicks(e) {
 */
 
 //Now we let the user click anywhere outside the popover to close it.
+
+
+/* Feed Back on 2/16/2024 !!!!!!!!!!!
+  Note Line 90 ... you had toggle vs remove!
+*/
+
 var body = document.querySelector("body");
 document.addEventListener("click", handleClicks);
+
 
 function handleClicks(e) {
   if (e.target.matches(".map") || e.target.matches(".closer")) {
